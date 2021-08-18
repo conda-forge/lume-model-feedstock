@@ -1,5 +1,5 @@
 {% set name = "lume-model" %}
-{% set version = "0.11" %}
+{% set version = "0.13" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/slaclab/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 7550eb1bdd449faa6b19b2ff02dee1a50ee77957183a9a587d67ca7d3a61efba
+  sha256: b075d2b5095518e8d6c07c7075884d4057693761a441635658dae8a0059de7d5
 
 build:
   noarch: python
@@ -16,12 +16,13 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.6
     - setuptools
     - pip
+    - pydantic >=1.6.1,<1.8.2
   run:
-    - python >=3.7
-    - pydantic >=1.6.1
+    - python >=3.6
+    - pydantic >=1.6.1,<1.8.2
     - numpy
     - pyyaml
 
@@ -41,6 +42,11 @@ about:
   summary: Lume-model hosts the variable classes required for running LUME models.
   doc_url: https://slaclab.github.io/lume-model/
   dev_url: https://github.com/slaclab/lume-model
+
+extra:
+  recipe-maintainers:
+    - jacquelinegarrahan
+    - ChristopherMayes
 
 extra:
   recipe-maintainers:
