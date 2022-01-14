@@ -1,5 +1,5 @@
 {% set name = "lume-model" %}
-{% set version = "0.13" %}
+{% set version = "1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/slaclab/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: b075d2b5095518e8d6c07c7075884d4057693761a441635658dae8a0059de7d5
+  sha256: 1f2e99671b792527773b3e5d6d5ff001c5f3bb8eca58db30aa236177c1688f68
 
 build:
   noarch: python
