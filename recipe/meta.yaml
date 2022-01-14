@@ -17,9 +17,7 @@ build:
 requirements:
   host:
     - python >=3.6
-    - setuptools
     - pip
-    - pydantic >=1.6.1,<1.8.2
   run:
     - python >=3.6
     - pydantic >=1.6.1,<1.8.2
@@ -32,7 +30,7 @@ test:
   requires:
     - pytest
   commands:
-    - py.test --pyargs lume_model
+    - python -m pytest --pyargs lume_model
 
 about:
   home: https://github.com/slaclab/lume-model
@@ -42,11 +40,6 @@ about:
   summary: Lume-model hosts the variable classes required for running LUME models.
   doc_url: https://slaclab.github.io/lume-model/
   dev_url: https://github.com/slaclab/lume-model
-
-extra:
-  recipe-maintainers:
-    - jacquelinegarrahan
-    - ChristopherMayes
 
 extra:
   recipe-maintainers:
