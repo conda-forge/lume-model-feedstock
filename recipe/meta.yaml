@@ -20,7 +20,7 @@ requirements:
     - pip
   run:
     - python >=3.7
-    - pydantic>=1.9.1
+    - pydantic >=1.9.1
     - numpy
     - pyyaml
 
