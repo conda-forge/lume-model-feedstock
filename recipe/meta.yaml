@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/slaclab/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 96b3a6cc8580c03cee5575ba2fef49276d78481e3493fc6045bce6122393d17a
+  sha256: 014fa2fabf8155bf621885a29c09fd1be222d489567def9d2faca821fcd7f223
 
 build:
   noarch: python
