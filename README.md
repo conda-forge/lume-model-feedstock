@@ -1,11 +1,11 @@
-About lume-model
-================
+About lume-model-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/lume-model-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/slaclab/lume-model
 
 Package license: SLAC Open
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/lume-model-feedstock/blob/main/LICENSE.txt)
 
 Summary: Lume-model hosts the variable classes required for running LUME models.
 
