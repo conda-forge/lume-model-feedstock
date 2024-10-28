@@ -33,6 +33,8 @@ test:
     - tensorflow
     - keras <3.0
     - botorch <0.11
+  source_files:
+    - tests
   commands:
     - python -m pytest --pyargs tests
 
