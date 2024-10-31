@@ -1,5 +1,5 @@
 {% set name = "lume-model" %}
-{% set version = "1.6.0" %}
+{% set version = "1.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/slaclab/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: a21ed93ed50c72d2d5d93fbcd3ccb51cec3b1a2cbd72644b069c8a2e3563b40c
+  sha256: 563ad1718bc7ff94b66e61d229da44bd07d31c522c784d1f365c20afb58c3aef
 
 build:
   noarch: python
@@ -16,11 +16,12 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.9,<3.12
     - pip
+    - setuptools
   run:
-    - python >=3.7
-    - pydantic >=1.9.1
+    - python >=3.9,<3.12
+    - pydantic
     - numpy
     - pyyaml
 
@@ -29,6 +30,11 @@ test:
     - lume_model
   requires:
     - pytest
+    - tensorflow
+    - keras <3.0
+    - botorch <0.11
+  source_files:
+    - tests
   commands:
     - python -m pytest --pyargs tests
 
@@ -43,5 +49,5 @@ about:
 
 extra:
   recipe-maintainers:
-    - jacquelinegarrahan
+    - pluflou
     - ChristopherMayes
