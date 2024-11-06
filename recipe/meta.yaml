@@ -1,13 +1,13 @@
 {% set name = "lume-model" %}
-{% set version = "1.7.0" %}
+{% set version = "1.7.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/slaclab/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 563ad1718bc7ff94b66e61d229da44bd07d31c522c784d1f365c20afb58c3aef
+  url:  https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/lume_model-{{ version }}.tar.gz
+  sha256: 07a185f5096b45aac05a60ca3e17bc0bdaac7f87f894d5bc0d04a14f81c0299b
 
 build:
   noarch: python
@@ -16,11 +16,11 @@ build:
 
 requirements:
   host:
-    - python >=3.9,<3.12
+    - python >=3.9
     - pip
     - setuptools
   run:
-    - python >=3.9,<3.12
+    - python >=3.9
     - pydantic
     - numpy
     - pyyaml
@@ -30,8 +30,6 @@ test:
     - lume_model
   requires:
     - pytest
-    - tensorflow
-    - keras <3.0
     - botorch <0.11
   source_files:
     - tests
