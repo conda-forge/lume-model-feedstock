@@ -1,5 +1,5 @@
 {% set name = "lume-model" %}
-{% set version = "1.8.0" %}
+{% set version = "1.8.1" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/lume_model-{{ version }}.tar.gz
-  sha256: 28a68e8edfc7bdfab4ab246aa276ce4b72cdc8bc60d9d66cf548ce4c757c0f79
+  sha256: 0fddf02c36cb47a384ef3d8ae3d7ba620c318ab54fb54cd0fd470a8527b18af4
 
 build:
   noarch: python
