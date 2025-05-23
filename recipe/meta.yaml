@@ -25,6 +25,7 @@ requirements:
     - pydantic
     - numpy
     - pyyaml
+    - mlflow
 
 test:
   imports:
