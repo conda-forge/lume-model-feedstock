@@ -23,12 +23,14 @@ requirements:
   run:
     - python >={{ python_min }}
     - lume-torch >=3.0.0
+    - mlfow
 
 test:
   imports:
     - lume_model
   requires:
     - python {{ python_min }}
+    - pip
   commands:
     - pip check
 
