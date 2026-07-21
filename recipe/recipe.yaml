@@ -1,50 +1,45 @@
-schema_version: 1
+{% set name = "lume-model" %}
+{% set version = "3.0.0" %}
+{% set python_min = "3.10" %}
 
-context:
-  python_min: "3.11"
-  version: "3.0.0"
-  
 package:
-  name: lume-model
-  version: ${{ version }}
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/l/lume-model/lume_model-${{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/lume_model-{{ version }}.tar.gz
   sha256: c935dccf1deb4f684c4eba13e008197fa3827a6de95105ff5f89e943570b6154
 
 build:
   noarch: python
   number: 0
-  script: ${{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python ${{ python_min }}.*
-    - setuptools >=75.0
-    - setuptools-scm
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=${{ python_min }}
+    - python >={{ python_min }}
     - lume-torch >=3.0.0
 
-tests:
-  - if: not win
-    then:
-      python:
-        imports:
-          - lume_model
-        pip_check: true
-        python_version:
-          - ${{ python_min }}.*
-          - "*"
+test:
+  imports:
+    - lume_model
+  requires:
+    - python {{ python_min }}
+  commands:
+    - pip check
 
 about:
-  homepage: https://github.com/slaclab/lume-model
+  home: https://github.com/slaclab/lume-model
   license: SLAC Open
   license_family: OTHER
   license_file: LICENSE
   summary: Lume-model hosts the variable classes required for running LUME models.
-  documentation: https://slaclab.github.io/lume-model/
+  doc_url: https://slaclab.github.io/lume-model/
+  dev_url: https://github.com/slaclab/lume-model
 
 extra:
   recipe-maintainers:
