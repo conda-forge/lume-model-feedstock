@@ -23,7 +23,7 @@ requirements:
   run:
     - python >={{ python_min }}
     - lume-torch >=3.0.0
-    - mlfow
+    - mlflow
 
 test:
   imports:
